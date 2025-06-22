@@ -1,0 +1,188 @@
+/* ========================================= */
+/*      PÁGINA DE LOGIN (VERSÃO REFINADA)    */
+/* ========================================= */
+
+:root {
+    --primary-blue: #002366;
+    --accent-red: #D81E05;
+    --light-bg: #f4f6f9;
+    --white: #ffffff;
+    --dark-text: #212529;
+    --secondary-text: #6c757d;
+    --border-color: #dee2e6;
+    --error-bg: #f8d7da;
+    --error-text: #721c24;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--primary-blue), #001a4d); /* Fundo com gradiente */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-container {
+    background: var(--white);
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    box-sizing: border-box;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header .logo {
+    height: 60px;
+    margin: 0 auto 15px;
+    transition: transform 0.3s ease;
+}
+.login-header .logo:hover {
+    transform: scale(1.1);
+}
+
+.login-header h2 {
+    color: var(--dark-text);
+    margin: 0 0 5px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.login-header p {
+    color: var(--secondary-text);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Formulário com Labels Flutuantes e Ícones */
+.login-form .form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+.form-group.with-icon .ph {
+    position: absolute;
+    left: 15px;
+    top: 16px;
+    color: var(--secondary-text);
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+.form-group.with-icon input {
+    padding-left: 50px; /* Espaço para o ícone */
+}
+
+.form-group.floating-label input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    transition: border-color 0.3s;
+}
+.form-group.floating-label label {
+    position: absolute;
+    left: 15px;
+    top: 16px;
+    color: var(--secondary-text);
+    pointer-events: none;
+    transition: all 0.2s ease;
+    background-color: var(--light-bg); /* Fundo para cobrir a borda do input */
+    padding: 0 5px;
+}
+/* Alinha a label com o ícone */
+.form-group.with-icon.floating-label label {
+    left: 50px;
+}
+/* Efeito de flutuação */
+.form-group.floating-label input:focus + label,
+.form-group.floating-label input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 12px;
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+}
+.form-group.with-icon.floating-label input:focus + label,
+.form-group.with-icon.floating-label input:not(:placeholder-shown) + label {
+    left: 45px;
+}
+
+.form-group.floating-label input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    background-color: var(--white);
+}
+.form-group.floating-label input:focus ~ .ph {
+    color: var(--primary-blue);
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent-red);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b01804;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(216, 30, 5, 0.3);
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.error-message i {
+    font-size: 1.5rem;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.back-link a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+    color: var(--primary-blue);
+}
